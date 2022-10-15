@@ -1,7 +1,6 @@
 package com.example.applicationsys.mapper;
 
 
-import com.example.applicationsys.dto.Notice;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +14,7 @@ public class NoticeMappertests {
 
     @Test
     @DisplayName("공지사항 조회 확인")
-    public void tt(){
+    public void findNotice(){
         System.out.println(noticeMapper.findAll());
     }
 }

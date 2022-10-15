@@ -1,10 +1,18 @@
 DROP TABLE IF EXISTS notice;
 
 CREATE TABLE notice(
-    id BIGINT PRIMARY KEY,
+    id BIGINT PRIMARY KEY AUTO_INCREMENT,
     title VARCHAR(30),
     content VARCHAR(100),
     who VARCHAR(30),
     createDate TIMESTAMP NOT NULL,
     updateDate TIMESTAMP NOT NULL
+);
+
+CREATE TABLE member(
+   id BIGINT PRIMARY KEY AUTO_INCREMENT,
+   email VARCHAR(30),
+   password VARCHAR(500),
+   createDate TIMESTAMP NOT NULL,
+   updateDate TIMESTAMP NOT NULL
 );

@@ -3,12 +3,10 @@ package com.example.applicationsys.controller;
 import com.example.applicationsys.dto.Notice;
 import com.example.applicationsys.dto.Response;
 import com.example.applicationsys.service.NoticeService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 @RestController
@@ -32,6 +30,16 @@ public class NoticeController {
 
     @GetMapping("/{id}")
     public Response<Object> findAll(HttpServletRequest request, @PathVariable("id") Long id){
+        final Notice notice = noticeService.findById(id);
+        return Response.builder()
+                .data(notice)
+                .message(id+" notice find")
+                .url(request.getRequestURI())
+                .build();
+    }
+
+    @PostMapping("")
+    public Response<Object> createNotice(HttpServletRequest request, @PathVariable("id") Long id){
         final Notice notice = noticeService.findById(id);
         return Response.builder()
                 .data(notice)
