@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.example.applicationsys.mapper.LectureMapper">
+<mapper namespace="com.example.applicationsys.mapper.master.LectureWriteMapper">
 
     <select id="findById" resultType="com.example.applicationsys.dto.Lecture">
         SELECT

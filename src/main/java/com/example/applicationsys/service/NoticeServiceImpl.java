@@ -1,7 +1,7 @@
 package com.example.applicationsys.service;
 
 import com.example.applicationsys.dto.Notice;
-import com.example.applicationsys.mapper.NoticeMapper;
+import com.example.applicationsys.mapper.read.NoticeReadMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
@@ -14,21 +14,21 @@ import java.util.List;
 @Transactional
 public class NoticeServiceImpl implements NoticeService{
 
-    private NoticeMapper noticeMapper;
+    private NoticeReadMapper noticeReadMapper;
 
-    public NoticeServiceImpl(NoticeMapper noticeMapper){
-        this.noticeMapper = noticeMapper;
+    public NoticeServiceImpl(NoticeReadMapper noticeReadMapper){
+        this.noticeReadMapper = noticeReadMapper;
     }
 
     @Cacheable("findAll")
     @Override
     public List<Notice> findAll() {
-        return noticeMapper.findAll();
+        return noticeReadMapper.findAll();
     }
 
     @Cacheable("findById")
     @Override
     public Notice findById(Long id) {
-        return noticeMapper.findById(id);
+        return noticeReadMapper.findById(id);
     }
 }

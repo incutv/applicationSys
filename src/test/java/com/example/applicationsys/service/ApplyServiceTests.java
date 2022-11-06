@@ -1,7 +1,7 @@
 package com.example.applicationsys.service;
 
 import com.example.applicationsys.dto.Apply;
-import com.example.applicationsys.mapper.LectureMapper;
+import com.example.applicationsys.mapper.read.LectureReadMapper;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -19,7 +19,7 @@ public class ApplyServiceTests {
     ApplyService applyService;
 
     @Autowired
-    LectureMapper lectureMapper;
+    LectureReadMapper lectureReadMapper;
 
     @Test
     public void testCounterWithConcurrency() throws InterruptedException {
@@ -40,7 +40,7 @@ public class ApplyServiceTests {
             });
         }
         latch.await();
-        assertEquals(20, lectureMapper.findById(1L).getNowPerson());
+        assertEquals(20, lectureReadMapper.findById(1L).getNowPerson());
 
     }
 }
