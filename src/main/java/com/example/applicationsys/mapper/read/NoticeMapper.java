@@ -1,4 +1,4 @@
-package com.example.applicationsys.mapper;
+package com.example.applicationsys.mapper.read;
 
 import com.example.applicationsys.dto.Notice;
 import org.apache.ibatis.annotations.Mapper;
