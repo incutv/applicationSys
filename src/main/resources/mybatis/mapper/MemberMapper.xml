@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.applicationsys.mapper.MemberMapper">
+    <insert id="signUp" parameterType="com.example.applicationsys.dto.Member" >
+        INSERT INTO member (email, password, createDate, updateDate)
+        VALUES (#{email},#{password},now(),now());
+    </insert>
+    <select id="findByEmail" resultType="com.example.applicationsys.dto.Member">
+        SELECT
+               id
+             , email
+             , password
+             , createDate
+             , updateDate
+        FROM member
+        WHERE email = #{email}
+    </select>
+</mapper>
