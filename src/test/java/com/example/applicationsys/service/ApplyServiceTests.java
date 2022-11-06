@@ -24,7 +24,7 @@ public class ApplyServiceTests {
     @Test
     public void testCounterWithConcurrency() throws InterruptedException {
         int numberOfThreads = 100;
-        ExecutorService service = Executors.newFixedThreadPool(10);
+        ExecutorService service = Executors.newFixedThreadPool(100);
         CountDownLatch latch = new CountDownLatch(numberOfThreads);
 
         for (int i = 0; i < numberOfThreads; i++) {
@@ -32,7 +32,7 @@ public class ApplyServiceTests {
             service.execute(() -> {
                 Apply apply = Apply.builder()
                         .lectureId(1L)
-                        .who("luca@naver.com")
+                        .who("naver.com")
                         .status("cm")
                         .build();
                 applyService.apply(apply);

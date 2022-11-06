@@ -28,7 +28,7 @@ CREATE TABLE lecture(
 );
 
 create table application(
-    id BIGINT NOT NULL AUTO_INCREMENT,
+    id BIGINT PRIMARY KEY AUTO_INCREMENT,
     lectureId BIGINT NOT NULL,
     status VARCHAR(30) NOT NULL,
     who VARCHAR(30),
