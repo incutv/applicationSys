@@ -1,11 +1,10 @@
-package com.example.applicationsys.mapper;
+package com.example.applicationsys.mapper.read;
 
 import com.example.applicationsys.dto.Member;
 import org.apache.ibatis.annotations.Mapper;
 
 
 @Mapper
-public interface MemberMapper {
-    public void signUp(Member member);
+public interface MemberReadMapper {
     public Member findByEmail(String email);
 }
