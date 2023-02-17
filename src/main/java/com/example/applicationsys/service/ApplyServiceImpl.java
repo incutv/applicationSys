@@ -23,7 +23,7 @@ public class ApplyServiceImpl implements ApplyService{
         this.applyWriteMapper=applyWriteMapper;
     }
 
-    @Transactional
+    //@Transactional
     @Override
     public synchronized void apply(Apply apply) {
         // maxperson < 20

@@ -21,6 +21,11 @@ public class NoticeController {
     @GetMapping("/all")
     public Response<Object> findAll(HttpServletRequest request){
         final List<Notice> notices = noticeService.findAll();
+
+        HttpSession session = request.getSession(true);
+        Object object = session.getAttribute("member");
+        System.out.println(object);
+
         return Response.builder()
                 .data(notices)
                 .message("notice find All")

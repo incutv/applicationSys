@@ -28,7 +28,6 @@ public class ApplyServiceTests {
         CountDownLatch latch = new CountDownLatch(numberOfThreads);
 
         for (int i = 0; i < numberOfThreads; i++) {
-
             service.execute(() -> {
                 Apply apply = Apply.builder()
                         .lectureId(1L)
@@ -39,6 +38,7 @@ public class ApplyServiceTests {
                 latch.countDown();
             });
         }
+
         latch.await();
         assertEquals(20, lectureReadMapper.findById(1L).getNowPerson());
 

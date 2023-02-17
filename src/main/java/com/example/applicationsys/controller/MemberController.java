@@ -25,7 +25,6 @@ public class MemberController {
 
     @PostMapping("")
     public Response<Object> saveMember(HttpServletRequest request,@RequestBody MemberReq memberReq){
-
         Member member = Member.builder()
                 .email(memberReq.email)
                 .password(passwordEncoder.encode(memberReq.password))
